@@ -1,0 +1,180 @@
+{
+  "authority_chains": {
+    "WATER": {
+      "chain": [
+        {
+          "level": 1,
+          "name": "Ward Water Inspector",
+          "name_ta": "வார்டு குடிநீர் ஆய்வாளர்",
+          "role": "OFFICER",
+          "sla_hours": { "CRITICAL": 24, "HIGH": 72, "MEDIUM": 168, "LOW": 336 }
+        },
+        {
+          "level": 2,
+          "name": "Panchayat / Municipal Water Authority",
+          "name_ta": "பஞ்சாயத்து / நகராட்சி குடிநீர் அதிகாரம்",
+          "role": "SUPERVISOR",
+          "sla_hours": { "CRITICAL": 24, "HIGH": 48, "MEDIUM": 120, "LOW": 240 }
+        },
+        {
+          "level": 3,
+          "name": "Block Development Authority",
+          "name_ta": "வட்டார வளர்ச்சி அதிகாரம்",
+          "role": "BLOCK_AUTHORITY",
+          "sla_hours": { "CRITICAL": 24, "HIGH": 48, "MEDIUM": 96, "LOW": 168 }
+        },
+        {
+          "level": 4,
+          "name": "District Collector Office",
+          "name_ta": "மாவட்ட ஆட்சியர் அலுவலகம்",
+          "role": "DISTRICT_AUTHORITY",
+          "sla_hours": { "CRITICAL": 12, "HIGH": 24, "MEDIUM": 72, "LOW": 120 }
+        }
+      ]
+    },
+    "ROADS": {
+      "chain": [
+        {
+          "level": 1,
+          "name": "Local Road Maintenance Officer",
+          "name_ta": "உள்ளூர் சாலை பராமரிப்பு அலுவலர்",
+          "role": "OFFICER",
+          "sla_hours": { "CRITICAL": 48, "HIGH": 120, "MEDIUM": 240, "LOW": 480 }
+        },
+        {
+          "level": 2,
+          "name": "Panchayat / Municipal Engineering Division",
+          "name_ta": "பஞ்சாயத்து / நகராட்சி பொறியியல் பிரிவு",
+          "role": "SUPERVISOR",
+          "sla_hours": { "CRITICAL": 24, "HIGH": 72, "MEDIUM": 168, "LOW": 336 }
+        },
+        {
+          "level": 3,
+          "name": "Highways Department - Zone Office",
+          "name_ta": "நெடுஞ்சாலைத் துறை - மண்டல அலுவலகம்",
+          "role": "ZONE_AUTHORITY",
+          "sla_hours": { "CRITICAL": 24, "HIGH": 48, "MEDIUM": 120, "LOW": 240 }
+        },
+        {
+          "level": 4,
+          "name": "District Collector Office",
+          "name_ta": "மாவட்ட ஆட்சியர் அலுவலகம்",
+          "role": "DISTRICT_AUTHORITY",
+          "sla_hours": { "CRITICAL": 12, "HIGH": 24, "MEDIUM": 72, "LOW": 120 }
+        }
+      ]
+    },
+    "ELECTRICITY": {
+      "chain": [
+        {
+          "level": 1,
+          "name": "TANGEDCO Section Engineer",
+          "name_ta": "TANGEDCO பிரிவு பொறியாளர்",
+          "role": "OFFICER",
+          "sla_hours": { "CRITICAL": 12, "HIGH": 48, "MEDIUM": 120, "LOW": 240 }
+        },
+        {
+          "level": 2,
+          "name": "TANGEDCO Division Office",
+          "name_ta": "TANGEDCO கோட்ட அலுவலகம்",
+          "role": "SUPERVISOR",
+          "sla_hours": { "CRITICAL": 12, "HIGH": 24, "MEDIUM": 72, "LOW": 168 }
+        },
+        {
+          "level": 3,
+          "name": "TANGEDCO Regional Office",
+          "name_ta": "TANGEDCO மண்டல அலுவலகம்",
+          "role": "REGIONAL_AUTHORITY",
+          "sla_hours": { "CRITICAL": 6, "HIGH": 24, "MEDIUM": 48, "LOW": 120 }
+        },
+        {
+          "level": 4,
+          "name": "District Collector Office",
+          "name_ta": "மாவட்ட ஆட்சியர் அலுவலகம்",
+          "role": "DISTRICT_AUTHORITY",
+          "sla_hours": { "CRITICAL": 6, "HIGH": 12, "MEDIUM": 48, "LOW": 72 }
+        }
+      ]
+    },
+    "SANITATION": {
+      "chain": [
+        {
+          "level": 1,
+          "name": "Municipal Sanitation Inspector",
+          "name_ta": "நகராட்சி சுகாதார ஆய்வாளர்",
+          "role": "OFFICER",
+          "sla_hours": { "CRITICAL": 24, "HIGH": 72, "MEDIUM": 168, "LOW": 336 }
+        },
+        {
+          "level": 2,
+          "name": "Municipal Health Officer",
+          "name_ta": "நகராட்சி சுகாதார அலுவலர்",
+          "role": "SUPERVISOR",
+          "sla_hours": { "CRITICAL": 24, "HIGH": 48, "MEDIUM": 120, "LOW": 240 }
+        },
+        {
+          "level": 3,
+          "name": "Corporation Commissioner Office",
+          "name_ta": "மாநகராட்சி ஆணையர் அலுவலகம்",
+          "role": "CORPORATION_AUTHORITY",
+          "sla_hours": { "CRITICAL": 12, "HIGH": 24, "MEDIUM": 72, "LOW": 168 }
+        },
+        {
+          "level": 4,
+          "name": "District Collector Office",
+          "name_ta": "மாவட்ட ஆட்சியர் அலுவலகம்",
+          "role": "DISTRICT_AUTHORITY",
+          "sla_hours": { "CRITICAL": 12, "HIGH": 24, "MEDIUM": 48, "LOW": 120 }
+        }
+      ]
+    },
+    "GOVERNMENT_SERVICES": {
+      "chain": [
+        {
+          "level": 1,
+          "name": "Taluk Office / e-Sevai Centre",
+          "name_ta": "தாலுகா அலுவலகம் / இ-சேவை மையம்",
+          "role": "OFFICER",
+          "sla_hours": { "CRITICAL": 72, "HIGH": 168, "MEDIUM": 336, "LOW": 720 }
+        },
+        {
+          "level": 2,
+          "name": "Revenue Divisional Officer",
+          "name_ta": "வருவாய் கோட்ட அலுவலர்",
+          "role": "SUPERVISOR",
+          "sla_hours": { "CRITICAL": 48, "HIGH": 120, "MEDIUM": 240, "LOW": 480 }
+        },
+        {
+          "level": 3,
+          "name": "District Revenue Authority",
+          "name_ta": "மாவட்ட வருவாய் அதிகாரம்",
+          "role": "DISTRICT_AUTHORITY",
+          "sla_hours": { "CRITICAL": 24, "HIGH": 72, "MEDIUM": 168, "LOW": 336 }
+        },
+        {
+          "level": 4,
+          "name": "State Commissioner Office",
+          "name_ta": "மாநில ஆணையர் அலுவலகம்",
+          "role": "STATE_AUTHORITY",
+          "sla_hours": { "CRITICAL": 24, "HIGH": 48, "MEDIUM": 120, "LOW": 240 }
+        }
+      ]
+    }
+  },
+  "critical_escalation": {
+    "immediate_notify_levels": [1, 2, 3],
+    "bypass_sla": true,
+    "indicators": [
+      "public_safety_risk",
+      "environmental_hazard",
+      "health_emergency",
+      "water_contamination",
+      "fire_risk",
+      "structural_collapse"
+    ]
+  },
+  "reminder_thresholds": {
+    "warning_hours_before": 24,
+    "critical_warning_hours_before": 6
+  }
+}

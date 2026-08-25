@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: nammakural-api
+    env: docker
+    region: oregon
+    plan: free
+    branch: main
+    envVars:
+      - key: DATABASE_URL
+        value: sqlite:///./nammakural.db  # Recommend changing to PostgreSQL URL in production
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: SECRET_KEY
+        generateValue: true
+      - key: CORS_ORIGINS
+        value: "https://your-domain.com,https://www.your-domain.com"

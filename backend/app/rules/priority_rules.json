@@ -1,0 +1,25 @@
+{
+  "weights": {
+    "safety_risk": 30,
+    "essential_service": 25,
+    "duration": 15,
+    "previous_complaint": 15,
+    "affected_population": 10
+  },
+  "duration_thresholds": {
+    "critical": 7,
+    "high": 3,
+    "medium": 1
+  },
+  "population_thresholds": {
+    "critical": 100,
+    "high": 50,
+    "medium": 10
+  },
+  "levels": {
+    "CRITICAL": { "min": 81, "max": 100 },
+    "HIGH": { "min": 61, "max": 80 },
+    "MEDIUM": { "min": 31, "max": 60 },
+    "LOW": { "min": 0, "max": 30 }
+  }
+}

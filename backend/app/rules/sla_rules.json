@@ -1,0 +1,19 @@
+{
+  "sla_hours": {
+    "WATER": { "CRITICAL": 24, "HIGH": 72, "MEDIUM": 168, "LOW": 336 },
+    "ROADS": { "CRITICAL": 48, "HIGH": 120, "MEDIUM": 240, "LOW": 480 },
+    "ELECTRICITY": { "CRITICAL": 12, "HIGH": 48, "MEDIUM": 120, "LOW": 240 },
+    "SANITATION": { "CRITICAL": 24, "HIGH": 72, "MEDIUM": 168, "LOW": 336 },
+    "GOVERNMENT_SERVICES": { "CRITICAL": 72, "HIGH": 168, "MEDIUM": 336, "LOW": 720 }
+  },
+  "risk_thresholds": {
+    "GREEN": { "remaining_pct_above": 50 },
+    "AMBER": { "remaining_pct_above": 0, "remaining_pct_below": 50 },
+    "RED": { "remaining_pct_below": 0 }
+  },
+  "escalation": {
+    "auto_escalate_on_overdue": true,
+    "warning_at_pct": 25,
+    "escalation_chain": ["OFFICER", "SUPERVISOR", "DEPARTMENT_HEAD"]
+  }
+}

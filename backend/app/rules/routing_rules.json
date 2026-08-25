@@ -1,0 +1,63 @@
+{
+  "routing": {
+    "WATER": {
+      "department_code": "WTR",
+      "department_name": "Water Supply & Drainage Board",
+      "department_name_ta": "குடிநீர் வழங்கல் மற்றும் வடிகால் வாரியம்",
+      "subcategory_overrides": {
+        "BILLING": {
+          "department_code": "WTR-BIL",
+          "department_name": "Water Revenue Section"
+        }
+      }
+    },
+    "ROADS": {
+      "department_code": "RDS",
+      "department_name": "Highways & Rural Roads Department",
+      "department_name_ta": "நெடுஞ்சாலை மற்றும் கிராமச் சாலைகள் துறை",
+      "subcategory_overrides": {
+        "ENCROACHMENT": {
+          "department_code": "RDS-ENF",
+          "department_name": "Road Encroachment Enforcement"
+        }
+      }
+    },
+    "ELECTRICITY": {
+      "department_code": "ELC",
+      "department_name": "Tamil Nadu Electricity Board (TANGEDCO)",
+      "department_name_ta": "தமிழ்நாடு மின் வாரியம் (TANGEDCO)",
+      "subcategory_overrides": {
+        "STREETLIGHT": {
+          "department_code": "ELC-STR",
+          "department_name": "Street Lighting Division"
+        }
+      }
+    },
+    "SANITATION": {
+      "department_code": "SAN",
+      "department_name": "Municipal Sanitation Department",
+      "department_name_ta": "நகராட்சி சுகாதாரத் துறை",
+      "subcategory_overrides": {
+        "PEST_CONTROL": {
+          "department_code": "SAN-PST",
+          "department_name": "Pest Control Division"
+        }
+      }
+    },
+    "GOVERNMENT_SERVICES": {
+      "department_code": "GOV",
+      "department_name": "District Collectorate - Public Services",
+      "department_name_ta": "மாவட்ட ஆட்சியர் அலுவலகம் - பொது சேவைகள்",
+      "subcategory_overrides": {
+        "PENSION": {
+          "department_code": "GOV-PEN",
+          "department_name": "Social Welfare - Pension Section"
+        },
+        "RATION": {
+          "department_code": "GOV-PDS",
+          "department_name": "Civil Supplies & Consumer Protection"
+        }
+      }
+    }
+  }
+}

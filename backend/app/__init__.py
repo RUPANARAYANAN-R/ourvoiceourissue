@@ -1,0 +1,1 @@
+"""NammaKural application package."""

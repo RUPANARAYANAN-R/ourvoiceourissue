@@ -1,0 +1,178 @@
+{
+  "schemes": [
+    {
+      "scheme_id": "TN-GOV-001",
+      "name": "Pudhumai Penn Scheme",
+      "name_ta": "புதுமைப் பெண் திட்டம்",
+      "category": "GOVERNMENT_SERVICES",
+      "description": "Financial assistance of Rs. 1,000 per month to girl students who studied from Class VI to XII in State Government schools to pursue higher education.",
+      "description_ta": "அரசுப் பள்ளிகளில் 6 முதல் 12 ஆம் வகுப்பு வரை படித்த மாணவிகளுக்கு உயர்கல்வி தொடர மாதம் ரூ. 1,000 நிதியுதவி.",
+      "eligibility_rules": [
+        { "field": "gender", "operator": "==", "value": "female", "description": "Must be female" },
+        { "field": "school_type", "operator": "==", "value": "government", "description": "Studied in government school (Class VI to XII)" }
+      ],
+      "required_documents": ["Aadhaar card", "Bank passbook", "School Bonafide Certificate"],
+      "application_channel": "Through College Principal / Online Portal",
+      "benefits": "₹1,000 credited monthly directly to bank account",
+      "benefits_ta": "மாதந்தோறும் ₹1,000 நேரடியாக வங்கிக் கணக்கில் வரவு வைக்கப்படும்"
+    },
+    {
+      "scheme_id": "TN-GOV-002",
+      "name": "Tamil Pudhalvan Scheme",
+      "name_ta": "தமிழ்ப் புதல்வன் திட்டம்",
+      "category": "GOVERNMENT_SERVICES",
+      "description": "Financial assistance of Rs. 1,000 per month to boy students who studied in government schools to support their higher education.",
+      "description_ta": "அரசுப் பள்ளிகளில் படித்த மாணவர்களுக்கு உயர்கல்வி பயில மாதம் ரூ. 1,000 நிதியுதவி.",
+      "eligibility_rules": [
+        { "field": "gender", "operator": "==", "value": "male", "description": "Must be male" },
+        { "field": "school_type", "operator": "==", "value": "government", "description": "Studied in government school" }
+      ],
+      "required_documents": ["Aadhaar card", "Bank passbook", "School Bonafide Certificate"],
+      "application_channel": "Through College Principal / Online Portal",
+      "benefits": "₹1,000 credited monthly directly to bank account",
+      "benefits_ta": "மாதந்தோறும் ₹1,000 நேரடியாக வங்கிக் கணக்கில் வரவு வைக்கப்படும்"
+    },
+    {
+      "scheme_id": "TN-GOV-003",
+      "name": "Kalaignar Magalir Urimai Thittam",
+      "name_ta": "கலைஞர் மகளிர் உரிமைத் திட்டம்",
+      "category": "GOVERNMENT_SERVICES",
+      "description": "Monthly basic income scheme of Rs. 1,000 provided to eligible women heads of families to recognize their unpaid labor.",
+      "description_ta": "குடும்பத் தலைவிகளுக்கு மாதம் ரூ. 1,000 உரிமைத் தொகை வழங்கும் திட்டம்.",
+      "eligibility_rules": [
+        { "field": "gender", "operator": "==", "value": "female", "description": "Must be female head of family" },
+        { "field": "annual_income", "operator": "<", "value": 250000, "description": "Family annual income less than Rs. 2.5 Lakhs" },
+        { "field": "land_ownership", "operator": "<", "value": 5, "description": "Wetland less than 5 acres or dryland less than 10 acres" }
+      ],
+      "required_documents": ["Ration Card", "Aadhaar card", "Bank passbook"],
+      "application_channel": "Special Camps / E-Sevai Centres",
+      "benefits": "₹1,000 per month as basic income",
+      "benefits_ta": "உரிமைத் தொகையாக மாதம் ₹1,000"
+    },
+    {
+      "scheme_id": "TN-GOV-004",
+      "name": "Chief Minister’s Breakfast Scheme",
+      "name_ta": "முதலமைச்சரின் காலை உணவுத் திட்டம்",
+      "category": "GOVERNMENT_SERVICES",
+      "description": "Providing free nutritious breakfast to primary school students (Class I to V) studying in Government schools.",
+      "description_ta": "அரசுப் பள்ளிகளில் பயிலும் தொடக்கப் பள்ளி (I முதல் V வரை) மாணவர்களுக்கு இலவச சத்தான காலை உணவு வழங்குதல்.",
+      "eligibility_rules": [
+        { "field": "school_type", "operator": "==", "value": "government", "description": "Must be studying in Government School" },
+        { "field": "class_level", "operator": "in", "value": ["I", "II", "III", "IV", "V"], "description": "Class 1 to 5 students" }
+      ],
+      "required_documents": ["No documents required (Automatic for students)"],
+      "application_channel": "Directly provided at schools",
+      "benefits": "Hot nutritious breakfast on all working days",
+      "benefits_ta": "அனைத்து வேலை நாட்களிலும் சூடான சத்தான காலை உணவு"
+    },
+    {
+      "scheme_id": "TN-GOV-005",
+      "name": "Chief Minister’s Girl Child Protection Scheme",
+      "name_ta": "முதலமைச்சரின் பெண் குழந்தை பாதுகாப்புத் திட்டம்",
+      "category": "GOVERNMENT_SERVICES",
+      "description": "Promotes the welfare of girl children by providing fixed deposits, preventing female infanticide and encouraging education.",
+      "description_ta": "பெண் குழந்தைகளின் நலனை மேம்படுத்துதல், பெண் சிசுக்கொலையைத் தடுத்தல் மற்றும் கல்வியை ஊக்குவித்தல்.",
+      "eligibility_rules": [
+        { "field": "children_count", "operator": "<=", "value": 2, "description": "Family with only one or two girl children and no male child" },
+        { "field": "sterilization", "operator": "==", "value": true, "description": "One parent should have undergone family planning" }
+      ],
+      "required_documents": ["Birth Certificate", "Income Certificate", "Family Planning Certificate"],
+      "application_channel": "District Social Welfare Officer",
+      "benefits": "Fixed deposit of ₹50,000 (one girl) or ₹25,000 each (two girls) maturing at age 18",
+      "benefits_ta": "18 வயதில் முதிர்ச்சியடையும் ₹50,000 அல்லது தலா ₹25,000 நிலையான வைப்புத்தொகை"
+    },
+    {
+      "scheme_id": "TN-HLT-001",
+      "name": "Makkalai Thedi Maruthuvam",
+      "name_ta": "மக்களைத் தேடி மருத்துவம்",
+      "category": "HEALTH",
+      "description": "Doorstep delivery of healthcare services, focusing on non-communicable diseases (NCDs) like hypertension and diabetes.",
+      "description_ta": "உயர் இரத்த அழுத்தம் மற்றும் நீரிழிவு போன்ற தொற்றா நோய்களில் கவனம் செலுத்தி, வீடுகளுக்கே சென்று மருத்துவ சேவைகளை வழங்குதல்.",
+      "eligibility_rules": [
+        { "field": "age", "operator": ">=", "value": 45, "description": "Above 45 years or having specific NCDs" },
+        { "field": "residence", "operator": "==", "value": "Tamil Nadu", "description": "Resident of Tamil Nadu" }
+      ],
+      "required_documents": ["Patient ID / Aadhaar for tracking"],
+      "application_channel": "Village Health Nurses / Women Health Volunteers",
+      "benefits": "Free monthly medicines delivered at home, physiotherapy, palliative care",
+      "benefits_ta": "இலவச மாதாந்திர மருந்துகள், பிசியோதெரபி, நோய்த்தடுப்பு பராமரிப்பு வீடுகளுக்கே சென்று வழங்குதல்"
+    },
+    {
+      "scheme_id": "TN-AGR-001",
+      "name": "Chief Minister's Uzhavar Pathukappu Thittam",
+      "name_ta": "முதலமைச்சரின் உழவர் பாதுகாப்புத் திட்டம்",
+      "category": "ROADS",
+      "description": "Comprehensive social security scheme for farmers and agricultural laborers providing assistance for marriage, education, and accidental death.",
+      "description_ta": "விவசாயிகள் மற்றும் விவசாயத் தொழிலாளர்களுக்கான விரிவான சமூகப் பாதுகாப்புத் திட்டம்.",
+      "eligibility_rules": [
+        { "field": "occupation", "operator": "in", "value": ["farmer", "agricultural_laborer"], "description": "Marginal farmer or agricultural laborer" },
+        { "field": "age", "operator": "between", "value": [18, 65], "description": "Age between 18 and 65 years" }
+      ],
+      "required_documents": ["Village Administrative Officer (VAO) Certificate", "Ration Card", "Aadhaar"],
+      "application_channel": "Tahsildar / Revenue Department",
+      "benefits": "Financial assistance ranging from ₹1,000 to ₹1,00,000 depending on the event (education, marriage, accident)",
+      "benefits_ta": "கல்வி, திருமணம், விபத்து ஆகியவற்றின் அடிப்படையில் ₹1,000 முதல் ₹1,00,000 வரை நிதியுதவி"
+    },
+    {
+      "scheme_id": "TN-WTR-001",
+      "name": "Jal Jeevan Mission (Tamil Nadu Implementation)",
+      "name_ta": "ஜல் ஜீவன் மிஷன்",
+      "category": "WATER",
+      "description": "Ensuring safe and adequate drinking water through individual household tap connections by 2024 to all households in rural India.",
+      "description_ta": "அனைத்து ஊரக வீடுகளுக்கும் குழாய் மூலம் பாதுகாப்பான குடிநீர் வழங்குதல்.",
+      "eligibility_rules": [
+        { "field": "area_type", "operator": "==", "value": "rural", "description": "Must be in a rural habitation" },
+        { "field": "existing_connection", "operator": "==", "value": false, "description": "Should not have an existing functional tap connection" }
+      ],
+      "required_documents": ["Address Proof", "Panchayat Resolution"],
+      "application_channel": "Village Water and Sanitation Committee (VWSC)",
+      "benefits": "Functional Household Tap Connection (FHTC)",
+      "benefits_ta": "வீட்டுக்கே செயல்படும் குடிநீர் குழாய் இணைப்பு"
+    },
+    {
+      "scheme_id": "TN-ELC-001",
+      "name": "Free Electricity for Farmers & Weavers",
+      "name_ta": "விவசாயிகள் மற்றும் நெசவாளர்களுக்கு இலவச மின்சாரம்",
+      "category": "ELECTRICITY",
+      "description": "Free power supply provided to agricultural pumpsets and powerloom/handloom weavers in Tamil Nadu.",
+      "description_ta": "விவசாய பம்ப் செட்கள் மற்றும் விசைத்தறி/கைத்தறி நெசவாளர்களுக்கு இலவச மின்சாரம்.",
+      "eligibility_rules": [
+        { "field": "occupation", "operator": "in", "value": ["farmer", "weaver"], "description": "Must be a registered farmer or weaver" }
+      ],
+      "required_documents": ["Land Patta (for farmers)", "Weaver Registration Certificate", "EB Meter Details"],
+      "application_channel": "TANGEDCO (Electricity Board)",
+      "benefits": "100% subsidy on electricity charges for eligible usage",
+      "benefits_ta": "தகுதியான பயன்பாட்டிற்கு மின் கட்டணத்தில் 100% மானியம்"
+    },
+    {
+      "scheme_id": "TN-RDS-001",
+      "name": "Namakku Naame Thittam (NNT)",
+      "name_ta": "நமக்கு நாமே திட்டம்",
+      "category": "ROADS",
+      "description": "A participatory scheme where local communities contribute 1/3rd of the cost for public infrastructure (like roads, parks) and the government funds the rest.",
+      "description_ta": "பொது கட்டமைப்பு பணிகளுக்கு (சாலைகள், பூங்காக்கள்) பொதுமக்கள் 1/3 பங்கு நிதி அளித்தால், மீதமுள்ள தொகையை அரசு வழங்கும் திட்டம்.",
+      "eligibility_rules": [
+        { "field": "community_contribution", "operator": ">=", "value": 33.33, "description": "Community must contribute at least 33% of project cost" }
+      ],
+      "required_documents": ["Project Proposal", "Proof of funds collected"],
+      "application_channel": "District Collectorate / Urban Local Body",
+      "benefits": "Government funds 66% of the local infrastructure project cost",
+      "benefits_ta": "உள்ளூர் உள்கட்டமைப்பு திட்டச் செலவில் 66% அரசு நிதியுதவி"
+    },
+    {
+      "scheme_id": "TN-SAN-001",
+      "name": "Namma Ooru Superu",
+      "name_ta": "நம்ம ஊரு சூப்பரு",
+      "category": "SANITATION",
+      "description": "A campaign-based scheme for comprehensive solid waste management and sanitation improvement in rural areas of Tamil Nadu.",
+      "description_ta": "தமிழ்நாட்டின் ஊரகப் பகுதிகளில் விரிவான திடக்கழிவு மேலாண்மை மற்றும் சுகாதார மேம்பாட்டிற்கான திட்டம்.",
+      "eligibility_rules": [
+        { "field": "area_type", "operator": "==", "value": "rural", "description": "Village Panchayats" }
+      ],
+      "required_documents": ["Panchayat Action Plan"],
+      "application_channel": "Rural Development and Panchayat Raj Department",
+      "benefits": "Funding and support for waste segregation, legacy waste clearing, and sanitation facilities",
+      "benefits_ta": "குப்பைகளை பிரித்தல் மற்றும் சுகாதார வசதிகளை மேம்படுத்த நிதியுதவி"
+    }
+  ]
+}

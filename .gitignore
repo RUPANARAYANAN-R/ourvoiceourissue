@@ -1,0 +1,44 @@
+# Environment Variables
+.env
+*.env
+!.env.example
+!.env.production
+
+# Dependencies
+node_modules/
+backend/venv/
+venv/
+ENV/
+env/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.sqlite
+*.sqlite3
+*.db
+nammakural.db
+backend/nammakural.db
+backend/uploads/
+uploads/
+test_images/
+
+# Next.js / Frontend build
+frontend/.next/
+frontend/out/
+frontend/build/
+.next/
+out/
+build/
+dist/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS Files
+.DS_Store
+Thumbs.db

@@ -1,0 +1,249 @@
+{
+  "categories": {
+    "WATER": {
+      "name": "Water Supply",
+      "name_ta": "குடிநீர் வழங்கல்",
+      "icon": "💧",
+      "department_code": "WTR",
+      "id_prefix": "TN-WTR",
+      "subcategories": {
+        "NO_SUPPLY": {
+          "name": "No Water Supply",
+          "name_ta": "குடிநீர் வரவில்லை",
+          "required_fields": ["location_name", "duration_days"],
+          "optional_fields": ["affected_population", "previous_complaint"],
+          "safety_impact": true,
+          "essential_service": true
+        },
+        "CONTAMINATION": {
+          "name": "Water Contamination",
+          "name_ta": "குடிநீர் மாசுபாடு",
+          "required_fields": ["location_name"],
+          "optional_fields": ["duration_days", "affected_population"],
+          "safety_impact": true,
+          "essential_service": true
+        },
+        "LEAKAGE": {
+          "name": "Pipeline Leakage",
+          "name_ta": "குழாய் கசிவு",
+          "required_fields": ["location_name"],
+          "optional_fields": ["duration_days"],
+          "safety_impact": false,
+          "essential_service": true
+        },
+        "BILLING": {
+          "name": "Water Bill Issue",
+          "name_ta": "குடிநீர் கட்டணப் பிரச்சனை",
+          "required_fields": ["location_name"],
+          "optional_fields": [],
+          "safety_impact": false,
+          "essential_service": false
+        },
+        "NEW_CONNECTION": {
+          "name": "New Water Connection",
+          "name_ta": "புதிய குடிநீர் இணைப்பு",
+          "required_fields": ["location_name"],
+          "optional_fields": [],
+          "safety_impact": false,
+          "essential_service": false
+        }
+      }
+    },
+    "ROADS": {
+      "name": "Roads & Transport",
+      "name_ta": "சாலை மற்றும் போக்குவரத்து",
+      "icon": "🛣️",
+      "department_code": "RDS",
+      "id_prefix": "TN-RDS",
+      "subcategories": {
+        "POTHOLE": {
+          "name": "Pothole",
+          "name_ta": "பள்ளம்",
+          "required_fields": ["location_name"],
+          "optional_fields": ["duration_days"],
+          "safety_impact": true,
+          "essential_service": false
+        },
+        "ROAD_DAMAGE": {
+          "name": "Road Damage",
+          "name_ta": "சாலை சேதம்",
+          "required_fields": ["location_name"],
+          "optional_fields": ["duration_days"],
+          "safety_impact": true,
+          "essential_service": false
+        },
+        "FLOODING": {
+          "name": "Road Flooding",
+          "name_ta": "சாலை வெள்ளம்",
+          "required_fields": ["location_name"],
+          "optional_fields": ["duration_days", "affected_population"],
+          "safety_impact": true,
+          "essential_service": true
+        },
+        "ENCROACHMENT": {
+          "name": "Road Encroachment",
+          "name_ta": "சாலை ஆக்கிரமிப்பு",
+          "required_fields": ["location_name"],
+          "optional_fields": [],
+          "safety_impact": false,
+          "essential_service": false
+        },
+        "MISSING_SIGNAGE": {
+          "name": "Missing Road Signs",
+          "name_ta": "சாலை அடையாளங்கள் இல்லை",
+          "required_fields": ["location_name"],
+          "optional_fields": [],
+          "safety_impact": true,
+          "essential_service": false
+        }
+      }
+    },
+    "ELECTRICITY": {
+      "name": "Electricity & Streetlights",
+      "name_ta": "மின்சாரம் மற்றும் தெரு விளக்குகள்",
+      "icon": "⚡",
+      "department_code": "ELC",
+      "id_prefix": "TN-ELC",
+      "subcategories": {
+        "POWER_CUT": {
+          "name": "Power Cut / Outage",
+          "name_ta": "மின் தடை",
+          "required_fields": ["location_name", "duration_days"],
+          "optional_fields": ["affected_population"],
+          "safety_impact": false,
+          "essential_service": true
+        },
+        "STREETLIGHT": {
+          "name": "Streetlight Not Working",
+          "name_ta": "தெரு விளக்கு வேலை செய்யவில்லை",
+          "required_fields": ["location_name"],
+          "optional_fields": ["duration_days"],
+          "safety_impact": true,
+          "essential_service": false
+        },
+        "TRANSFORMER": {
+          "name": "Transformer Issue",
+          "name_ta": "மின் மாற்றி பிரச்சனை",
+          "required_fields": ["location_name"],
+          "optional_fields": ["duration_days", "affected_population"],
+          "safety_impact": true,
+          "essential_service": true
+        },
+        "BILLING": {
+          "name": "Electricity Bill Issue",
+          "name_ta": "மின் கட்டணப் பிரச்சனை",
+          "required_fields": ["location_name"],
+          "optional_fields": [],
+          "safety_impact": false,
+          "essential_service": false
+        },
+        "NEW_CONNECTION": {
+          "name": "New Electricity Connection",
+          "name_ta": "புதிய மின் இணைப்பு",
+          "required_fields": ["location_name"],
+          "optional_fields": [],
+          "safety_impact": false,
+          "essential_service": false
+        }
+      }
+    },
+    "SANITATION": {
+      "name": "Sanitation & Waste",
+      "name_ta": "சுகாதாரம் மற்றும் கழிவு",
+      "icon": "🚿",
+      "department_code": "SAN",
+      "id_prefix": "TN-SAN",
+      "subcategories": {
+        "GARBAGE": {
+          "name": "Garbage Not Collected",
+          "name_ta": "குப்பை அகற்றப்படவில்லை",
+          "required_fields": ["location_name"],
+          "optional_fields": ["duration_days"],
+          "safety_impact": true,
+          "essential_service": true
+        },
+        "DRAINAGE": {
+          "name": "Drainage / Sewage Issue",
+          "name_ta": "வடிகால் / கழிவுநீர் பிரச்சனை",
+          "required_fields": ["location_name"],
+          "optional_fields": ["duration_days", "affected_population"],
+          "safety_impact": true,
+          "essential_service": true
+        },
+        "OPEN_DEFECATION": {
+          "name": "Open Defecation",
+          "name_ta": "திறந்தவெளி கழிப்பு",
+          "required_fields": ["location_name"],
+          "optional_fields": [],
+          "safety_impact": true,
+          "essential_service": false
+        },
+        "PEST_CONTROL": {
+          "name": "Pest / Mosquito Control",
+          "name_ta": "பூச்சி / கொசு கட்டுப்பாடு",
+          "required_fields": ["location_name"],
+          "optional_fields": ["duration_days"],
+          "safety_impact": true,
+          "essential_service": false
+        },
+        "PUBLIC_TOILET": {
+          "name": "Public Toilet Issue",
+          "name_ta": "பொது கழிப்பறை பிரச்சனை",
+          "required_fields": ["location_name"],
+          "optional_fields": [],
+          "safety_impact": false,
+          "essential_service": false
+        }
+      }
+    },
+    "GOVERNMENT_SERVICES": {
+      "name": "Government Services",
+      "name_ta": "அரசு சேவைகள்",
+      "icon": "🏛️",
+      "department_code": "GOV",
+      "id_prefix": "TN-GOV",
+      "subcategories": {
+        "CERTIFICATE": {
+          "name": "Certificate Issue",
+          "name_ta": "சான்றிதழ் பிரச்சனை",
+          "required_fields": ["location_name"],
+          "optional_fields": [],
+          "safety_impact": false,
+          "essential_service": false
+        },
+        "PENSION": {
+          "name": "Pension Issue",
+          "name_ta": "ஓய்வூதிய பிரச்சனை",
+          "required_fields": ["location_name"],
+          "optional_fields": [],
+          "safety_impact": false,
+          "essential_service": true
+        },
+        "RATION": {
+          "name": "Ration / PDS Issue",
+          "name_ta": "ரேஷன் / பொது விநியோக பிரச்சனை",
+          "required_fields": ["location_name"],
+          "optional_fields": ["affected_population"],
+          "safety_impact": false,
+          "essential_service": true
+        },
+        "HOUSING": {
+          "name": "Housing Assistance",
+          "name_ta": "வீட்டு உதவி",
+          "required_fields": ["location_name"],
+          "optional_fields": [],
+          "safety_impact": false,
+          "essential_service": false
+        },
+        "EDUCATION": {
+          "name": "Education Service Issue",
+          "name_ta": "கல்வி சேவை பிரச்சனை",
+          "required_fields": ["location_name"],
+          "optional_fields": [],
+          "safety_impact": false,
+          "essential_service": false
+        }
+      }
+    }
+  }
+}
