@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: ourvoiceourissue-api
+    runtime: docker
+    region: singapore
+    plan: free
+    branch: main
+    rootDir: backend
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: DATABASE_URL
+        value: sqlite:///./nammakural.db
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: SECRET_KEY
+        generateValue: true
+      - key: CORS_ORIGINS
+        value: "*"
