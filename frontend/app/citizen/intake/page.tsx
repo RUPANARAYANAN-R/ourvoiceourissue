@@ -194,8 +194,8 @@ export default function IntakePage() {
         setAudioBlob(blob);
         setAudioUrl(URL.createObjectURL(blob));
         stream.getTracks().forEach(t => t.stop());
-        setStage('processing');
-        processAudio(blob, liveTranscriptRef.current);
+        // Auto-start camera after voice recording stops
+        startCamera('welcome');
       };
 
       const SpeechRecognition = (window as any).SpeechRecognition || (window as any).webkitSpeechRecognition;
@@ -304,11 +304,15 @@ export default function IntakePage() {
       setStage('processing');
       setError('');
       try {
-        const data = await api.analyzeImage(file, selectedLang.code, location?.lat, location?.lng);
-        setResult(data);
-        setStage('transcription');
+        if (audioBlob) {
+          await processAudio(audioBlob, liveTranscriptRef.current);
+        } else {
+          const data = await api.analyzeImage(file, selectedLang.code, location?.lat, location?.lng);
+          setResult(data);
+          setStage('transcription');
+        }
       } catch (err: any) {
-        setError(err.message || 'Image processing failed');
+        setError(err.message || 'Processing failed');
         setStage('welcome');
       }
     }, 'image/jpeg', 0.85);
@@ -545,7 +549,7 @@ export default function IntakePage() {
             </div>
 
             <div className="flex flex-col items-center gap-6">
-              <div className="flex flex-row justify-center gap-8 items-center w-full">
+              <div className="flex justify-center w-full">
                 <div className="flex flex-col items-center gap-4">
                   <button
                     onClick={startRecording}
@@ -555,17 +559,6 @@ export default function IntakePage() {
                     <Mic className="w-8 h-8" />
                   </button>
                   <p className="text-sm font-bold text-[var(--nk-text-secondary)]">{selectedLang.ui.tapToSpeak}</p>
-                </div>
-                
-                <div className="flex flex-col items-center gap-4">
-                  <button
-                    onClick={startCamera}
-                    className="w-24 h-24 rounded-full shadow-2xl bg-white border border-[var(--nk-glass-border)] flex items-center justify-center text-[var(--nk-earth-brown)] hover:scale-105 transition-transform"
-                    title="Click to take a live photo"
-                  >
-                    <Camera className="w-8 h-8 text-[var(--nk-earth-brown)]" />
-                  </button>
-                  <p className="text-sm font-bold text-[var(--nk-text-secondary)]">Take Photo</p>
                 </div>
               </div>
             </div>
@@ -775,7 +768,7 @@ export default function IntakePage() {
                    <p className="text-xs font-bold text-[var(--nk-text-muted)] uppercase tracking-wider mb-2">Category</p>
                    <div className="flex items-center gap-2">
                      <span className="text-2xl">{CATEGORY_INFO[result.extraction.category]?.icon}</span>
-                     <span className="text-lg font-bold text-[var(--nk-earth-brown)]">{CATEGORY_INFO[result.extraction.category]?.name_ta || result.extraction.category}</span>
+                     <span className="text-lg font-bold text-[var(--nk-earth-brown)]">{CATEGORY_INFO[result.extraction.category]?.name || result.extraction.category}</span>
                    </div>
                  </div>
                )}
@@ -830,7 +823,7 @@ export default function IntakePage() {
                         <div key={idx} className="flex items-center gap-3 p-3 rounded-lg bg-white/60 border border-[var(--nk-glass-border)]">
                           <span className="text-xl">{CATEGORY_INFO[issue.category]?.icon || '📋'}</span>
                           <div>
-                            <p className="text-sm font-bold text-[var(--nk-deep-charcoal)]">{CATEGORY_INFO[issue.category]?.name_ta || issue.category}</p>
+                            <p className="text-sm font-bold text-[var(--nk-deep-charcoal)]">{CATEGORY_INFO[issue.category]?.name || issue.category}</p>
                             <p className="text-xs text-[var(--nk-text-muted)]">{issue.issue}</p>
                           </div>
                         </div>
