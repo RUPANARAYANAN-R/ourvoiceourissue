@@ -1,8 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { useRouter } from 'next/navigation';
-import { use } from 'react';
+import { useRouter, useParams } from 'next/navigation';
 import { ArrowLeft, Clock, MapPin, User, FileText, Activity, ShieldCheck, CheckCircle2, Play, Square, Upload } from 'lucide-react';
 import api from '@/lib/api';
 
@@ -21,10 +20,10 @@ const PRIORITY_BADGE: Record<string, string> = {
   LOW: 'badge-low',
 };
 
-export default function GrievanceDetailPage({ params }: { params: Promise<{ id: string }> }) {
+export default function GrievanceDetailPage() {
   const router = useRouter();
-  const unwrappedParams = use(params);
-  const { id } = unwrappedParams;
+  const routeParams = useParams();
+  const id = Array.isArray(routeParams?.id) ? routeParams.id[0] : (routeParams?.id || '');
   
   const [grievance, setGrievance] = useState<any>(null);
   const [similarGrievances, setSimilarGrievances] = useState<any[]>([]);

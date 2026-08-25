@@ -3,9 +3,13 @@
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { ArrowLeft, Map as MapIcon, Activity, TrendingUp, AlertTriangle, Filter } from 'lucide-react';
-import Map, { Marker, NavigationControl } from 'react-map-gl/maplibre';
-import 'maplibre-gl/dist/maplibre-gl.css';
+import dynamic from 'next/dynamic';
 import api from '@/lib/api';
+
+const CommunityMap = dynamic(() => import('@/app/components/CommunityMap'), {
+  ssr: false,
+  loading: () => <div className="w-full h-full flex items-center justify-center text-xs text-[var(--nk-text-muted)]">Loading Map...</div>,
+});
 
 const CATEGORY_INFO: Record<string, { icon: string; name: string }> = {
   WATER: { icon: '💧', name: 'Water' },
@@ -131,53 +135,7 @@ export default function CommunityIntelligencePage() {
               </div>
               
               <div className="flex-1 w-full h-full relative bg-[#e5e3df]">
-                <Map
-                  initialViewState={{
-                    longitude: 78.6569, // Center of Tamil Nadu
-                    latitude: 11.1271,
-                    zoom: 6
-                  }}
-                  mapStyle={{
-                    version: 8,
-                    sources: {
-                      osm: {
-                        type: 'raster',
-                        tiles: ['https://a.tile.openstreetmap.org/{z}/{x}/{y}.png'],
-                        tileSize: 256,
-                        attribution: '&copy; OpenStreetMap Contributors'
-                      }
-                    },
-                    layers: [
-                      {
-                        id: 'osm',
-                        type: 'raster',
-                        source: 'osm',
-                        minzoom: 0,
-                        maxzoom: 19
-                      }
-                    ]
-                  }}
-                  attributionControl={false}
-                  style={{ width: '100%', height: '100%', position: 'absolute', top: 0, left: 0 }}
-                >
-                  <NavigationControl position="bottom-right" />
-                  
-                  {/* Render Clusters */}
-                  {clusters.map((cluster, i) => (
-                    <Marker
-                      key={i}
-                      longitude={cluster.longitude || 78.6569 + (Math.random() - 0.5)}
-                      latitude={cluster.latitude || 11.1271 + (Math.random() - 0.5)}
-                    >
-                      <div className="relative flex items-center justify-center">
-                        <div className={`absolute w-16 h-16 rounded-full opacity-30 animate-ping ${cluster.severity === 'CRITICAL' ? 'bg-[var(--nk-critical)]' : 'bg-[var(--nk-warning)]'}`}></div>
-                        <div className={`w-8 h-8 rounded-full border-2 border-white shadow-lg flex items-center justify-center text-white text-xs font-bold ${cluster.severity === 'CRITICAL' ? 'bg-[var(--nk-critical)]' : 'bg-[var(--nk-warning)]'}`}>
-                          {cluster.count}
-                        </div>
-                      </div>
-                    </Marker>
-                  ))}
-                </Map>
+                <CommunityMap clusters={clusters} />
               </div>
            </div>
         </div>

@@ -7,13 +7,6 @@ import { Mic, ArrowRight, Activity, Shield, Users, Map, Lightbulb, CheckCircle2,
 
 export default function LandingPage() {
   const router = useRouter();
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  if (!mounted) return null;
 
   return (
     <div className="min-h-screen bg-[var(--nk-bg-deep)] text-[var(--nk-text)] overflow-x-hidden selection:bg-[var(--nk-golden-beige)] selection:text-[var(--nk-deep-charcoal)]">
