@@ -1,0 +1,14 @@
+{
+  "name": "ourvoiceourissue-root",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "npm --prefix frontend run dev",
+    "build": "cd frontend && npm install && npm run build",
+    "start": "npm --prefix frontend start",
+    "lint": "npm --prefix frontend run lint"
+  },
+  "dependencies": {
+    "next": "16.3.0"
+  }
+}
