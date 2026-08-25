@@ -1,4 +1,4 @@
-# 🏛️ OurVoice (நம்ம குரல்)
+# 🏛️ OurVoice
 ### *Our Voice. Our Issue. Towards the Right Solution.*
 > **AI-Powered Multilingual Voice Governance & Community Intelligence Platform**
 
@@ -14,7 +14,9 @@
 
 ## 🌟 Overview
 
-**OurVoice** is a transformative civic intelligence layer designed for Indian e-governance. Traditional grievance portals force citizens through rigid bureaucratic forms, creating digital literacy barriers. **OurVoice** replaces this with a conversational, voice-first AI engine that listens to citizens in their native tongue, structures and verifies the issue, captures real-time evidence, routes to the right department, and uncovers emerging community-wide crises before they escalate.
+**OurVoice** is an AI-powered multilingual governance and community intelligence platform built to bridge the gap between citizens and public administration. Traditional grievance portals force citizens to navigate complex bureaucratic menus, creating significant digital and language literacy barriers.
+
+**OurVoice** replaces traditional forms with a natural, voice-first AI engine. Citizens can simply speak in their preferred language. The system converts speech to structured data, verifies live camera evidence, attaches geolocation proofs, deterministically assigns priority SLAs, routes tickets to appropriate departments, and clusters data to detect emerging public infrastructure crises in real time.
 
 ```
 "AI proposes, deterministic rules validate, and humans act."
@@ -22,33 +24,50 @@
 
 ---
 
+## 🌐 Multilingual Support
+
+OurVoice is engineered to support regional dialects and official languages across India:
+
+| Language | Code | Speech Recognition | AI Understanding | Audio Synthesis |
+|---|---|---|---|---|
+| **English** | `en` | ✅ Supported | ✅ Supported | ✅ Supported |
+| **Tamil** | `ta` | ✅ Supported | ✅ Supported | ✅ Supported |
+| **Hindi** | `hi` | ✅ Supported | ✅ Supported | ✅ Supported |
+| **Telugu** | `te` | ✅ Supported | ✅ Supported | ✅ Supported |
+| **Kannada** | `kn` | ✅ Supported | ✅ Supported | ✅ Supported |
+| **Malayalam** | `ml` | ✅ Supported | ✅ Supported | ✅ Supported |
+| **Bengali** | `bn` | ✅ Supported | ✅ Supported | ✅ Supported |
+| **Urdu** | `ur` | ✅ Supported | ✅ Supported | ✅ Supported |
+
+---
+
 ## 🚀 Key Features
 
-### 🎙️ 1. Multilingual Voice-First Grievance Intake
-* **Native Dialect Understanding**: Speaks and processes Tamil, English, Hindi, Telugu, Kannada, Malayalam, Bengali, and Urdu.
-* **Instant Speech Recognition + Multi-Modal Fallback**: Uses browser-native speech synthesis coupled with Google Gemini 2.0 Flash for audio extraction.
-* **Multi-Issue Decomposition**: If a citizen complains about both broken roads and water cuts in one recording, the AI splits them into distinct tickets routed to separate departments (e.g., Highways vs. TWAD Board).
+### 🎙️ 1. Multilingual Voice-First Intake
+* **Natural Speech Understanding**: Understands regional accents, colloquial phrasing, and mixed-language speech (e.g., Tanglish, Hinglish).
+* **Instant Speech Recognition + Multi-Modal Fallback**: Uses browser-native SpeechRecognition combined with Google Gemini 2.0 Flash for audio and intent extraction.
+* **Multi-Issue Decomposition**: When a citizen mentions multiple distinct issues in a single voice recording (e.g. broken road and water supply disruption), the system splits them into separate departmental tickets automatically.
 
 ### 📸 2. Verified Evidence & Automatic Geo-Tagging
-* **Live Camera Proof**: Mandatory real-time camera capture prevents fake stock-photo submissions.
-* **Automated Geolocation & IP Stamp**: Captures device GPS coordinates, reverse-geocodes exact street addresses, and logs citizen IP proofs.
+* **Mandatory Live Camera Capture**: Automatically activates the camera after voice recording to capture real-time photo evidence.
+* **Automated Geolocation & IP Stamp**: Gathers GPS coordinates, reverse-geocodes exact street addresses, and logs network IP verification proofs.
 
 ### ❓ 3. Proactive Smart Clarification
-* If essential routing details are missing (e.g. duration, landmark, or specific locality), the AI asks concise, single-question follow-ups in the citizen's native language before final submission.
+* If essential routing details are missing (e.g., exact landmark, duration, or severity), the AI asks concise, single-question follow-ups in the citizen's chosen language before submission.
 
 ### 🛡️ 4. Deterministic SLA & Priority Engine
-* Uses strict, auditable scoring rules (not LLM hallucination) to calculate urgency scores (CRITICAL, HIGH, MEDIUM, LOW) based on hazard type, historical recurrences, and population impact.
-* **Autonomous SLA Monitor**: Background task monitors deadlines and triggers escalations if unattended.
+* Employs strict, auditable scoring rules (eliminating LLM hallucinations) to assign priority levels (`CRITICAL`, `HIGH`, `MEDIUM`, `LOW`) based on hazard type, historical recurrences, and population impact.
+* **Autonomous SLA Monitor**: An automated background worker monitors resolution deadlines and escalates delayed tickets.
 
 ### 🗺️ 5. Geospatial Cluster & Heatmap Intelligence
-* Embeds grievances using vector models to detect anomalous spatial clusters (e.g., 50 complaints within a 2km radius in 48 hours flagged as an **Emerging Water Crisis**).
-* Interactive MapLibre heatmap visualization for district collectors and department heads.
+* Vector embeddings cluster complaints spatially to detect anomalous public infrastructure hotspots (e.g., 40+ complaints in a 2km radius flagged as an **Emerging Water Scarcity Cluster**).
+* Interactive MapLibre heatmap visualization for administrative officers and municipal commissioners.
 
 ### 💡 6. Proactive Welfare Scheme Discovery
-* Connects grievances to Tamil Nadu state & central government welfare schemes (e.g., *Kalaignar Kanavu Illam*, Chief Minister's Solar Scheme) with instant eligibility matching.
+* Identifies when a citizen grievance is a request for government assistance and matches them to relevant central and state welfare schemes with instant eligibility assessment.
 
-### 👥 7. Complete Officer & Citizen Portals
-* **Citizen Tracking**: Real-time status tracker with timeline progression (`CREATED` ➔ `CLASSIFIED` ➔ `ROUTED` ➔ `IN_PROGRESS` ➔ `RESOLVED` ➔ `CITIZEN_CONFIRMED`).
+### 👥 7. Officer & Citizen Portals
+* **Citizen Tracking**: Live status tracker with end-to-end milestone progression (`CREATED` ➔ `CLASSIFIED` ➔ `ROUTED` ➔ `IN_PROGRESS` ➔ `RESOLVED` ➔ `CITIZEN_CONFIRMED`).
 * **Officer Dashboard**: 2x2 action matrix, priority queues, resolution workflows, and citizen feedback loop.
 
 ---
@@ -57,17 +76,18 @@
 
 ```mermaid
 flowchart TD
-    A[Citizen Voice Recording / Photo Evidence] --> B[Gemini 2.0 Flash Multi-Modal Extraction]
-    B --> C{Missing Critical Info?}
-    C -- Yes --> D[Smart Conversational Clarification]
-    D --> B
-    C -- No --> E[Deterministic Rule & Priority Engine]
-    E --> F[Automated Department Routing & SLA Assignment]
-    F --> G[SQLite / PostgreSQL Database]
-    G --> H[Officer Action Dashboard]
-    G --> I[Spatial Clustering & Heatmap Engine]
-    G --> J[Citizen Live Tracking & Feedback]
-    I --> K[Emerging Crisis Hotspot Alerts]
+    A[Citizen Speaks in Any Supported Language] --> B[Voice Recording & Auto Camera Capture]
+    B --> C[Gemini 2.0 Flash Multi-Modal Extraction]
+    C --> D{Missing Critical Info?}
+    D -- Yes --> E[Smart Conversational Clarification]
+    E --> C
+    D -- No --> F[Deterministic Rule & Priority Engine]
+    F --> G[Automated Department Routing & SLA Assignment]
+    G --> H[SQL Database]
+    H --> I[Officer Action Dashboard]
+    H --> J[Spatial Clustering & Heatmap Engine]
+    H --> K[Citizen Live Tracking & Feedback]
+    J --> L[Emerging Crisis Hotspot Alerts]
 ```
 
 ---
@@ -76,11 +96,11 @@ flowchart TD
 
 | Domain | Technology | Purpose |
 |---|---|---|
-| **Frontend Framework** | **Next.js 16.3** (App Router, Turbopack) | Modern, fast SSR & static web architecture |
-| **UI & Styling** | **React 19**, **Tailwind CSS 4**, Lucide Icons | Responsive civic governance theme |
-| **Mapping Engine** | **MapLibre GL**, **React-Map-GL** (Client-Only SSR-Safe) | Interactive geospatial heatmaps & cluster maps |
-| **Backend API** | **FastAPI 0.115** (Python 3.12) | High-performance async REST backend |
-| **AI & Multi-modal LLM** | **Google Gemini 2.0 Flash** (`google-genai`) | Voice transcription, entity extraction, scheme matching |
+| **Frontend Framework** | **Next.js 16.3** (App Router, Turbopack) | High-performance SSR and static web architecture |
+| **UI & Styling** | **React 19**, **Tailwind CSS 4**, Lucide Icons | Clean, responsive civic governance theme |
+| **Mapping Engine** | **MapLibre GL**, **React-Map-GL** (Client-Only SSR-Safe) | Interactive geospatial heatmaps & cluster visualization |
+| **Backend API** | **FastAPI 0.115** (Python 3.12) | High-performance asynchronous REST backend |
+| **AI & Multi-Modal LLM** | **Google Gemini 2.0 Flash** (`google-genai`) | Voice transcription, entity extraction, scheme matching |
 | **Database & ORM** | **SQLAlchemy 2.0**, SQLite (Dev) / PostgreSQL (Prod) | Structured grievance lifecycle management |
 | **Security & Auth** | JWT (`python-jose`), Passlib Bcrypt | Role-based officer & admin access control |
 
@@ -123,7 +143,7 @@ flowchart TD
 ### Prerequisites
 - **Node.js**: `v20.x` or higher
 - **Python**: `3.10` - `3.12`
-- **Google Gemini API Key**: [Get a free key here](https://aistudio.google.com/)
+- **Google Gemini API Key**: [Get a free key from Google AI Studio](https://aistudio.google.com/)
 
 ---
 
@@ -201,10 +221,10 @@ docker run -p 8000:8000 --env-file ./backend/.env ourvoice-backend
 
 | Role | Username | Password | Access Level |
 |---|---|---|---|
-| **TWAD Officer** | `officer_water` | `water123` | Water supply & sanitation issues |
-| **Highways Officer** | `officer_roads` | `roads123` | Roads, potholes & infrastructure |
-| **TANGEDCO Officer** | `officer_elec` | `elec123` | Power outages & transformers |
-| **System Admin** | `admin` | `admin123` | Full analytics, SLA monitor & system config |
+| **Water Supply Officer** | `officer_water` | `water123` | Water supply & sanitation issues |
+| **Highways & Roads Officer** | `officer_roads` | `roads123` | Roads, potholes & infrastructure |
+| **Electricity Board Officer** | `officer_elec` | `elec123` | Power outages & transformers |
+| **System Administrator** | `admin` | `admin123` | Full analytics, SLA monitor & system config |
 
 ---
 
